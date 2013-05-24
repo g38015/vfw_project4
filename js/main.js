@@ -98,7 +98,8 @@ window.addEventListener("DOMContentLoaded", function() {
      // This function gets the leads from localstorage and shows them
      function getLeads() {
          if (localStorage.length === 0) {
-             alert("You Have No Leads, Please Enter One Now");
+             alert("You Have No Leads, Defalt Lead Info Added");
+             autofillLeads();
              } else {
                 toggleLeads("on");
                  //Write local data from local storage to browser
@@ -118,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function() {
                      var obj = JSON.parse(value);
                      var newSublist = document.createElement("ul");
                      newLi.appendChild(newSublist);
+                     getImage(obj.bedrooms[1], newSublist);
                      for (var n in obj) {
                          var makeNewSubli =document.createElement("li");
                          newSublist.appendChild(makeNewSubli);
@@ -128,6 +130,28 @@ window.addEventListener("DOMContentLoaded", function() {
                      createLeadLinks(localStorage.key(i), linkLi);
                  }
              } 
+     }
+     
+     // Grab the image
+     function getImage(catName, newSublist) {
+         var imageLi = document.createElement("li");
+         newSublist.appendChild(imageLi);
+         var newImage = document.createElement('img');
+         var setSrc = newImage.setAttribute("src", "images/" + catName + ".png");
+         imageLi.appendChild(newImage);
+     
+     }
+     
+     // Autofill Local Storage with JSON
+     function autofillLeads() {
+         // JSON Object is comming from JSON.js file from HTML Page
+         // Store data into local storage
+         for(var n in json) {
+             var id = Math.floor(Math.random()*10000001);
+             localStorage.setItem(id, JSON.stringify(json[n]));
+         
+         }
+     
      }
      
      // Create Edit and Delete Links for Each Stored Lead when Displayed
