@@ -1,0 +1,218 @@
+/*
+VFW 1305
+Project 2
+Peter Hitchcok
+May 14, 2013
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 14px/16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    background-color: #cacbc9;
+    }
+
+h1 {
+    color: #d8d8d8;
+    text-shadow: 1px 2px 1px #323232;
+    margin: 0px;
+    padding: 10px 0;
+    border-bottom: 1px solid #666;
+    text-align: center;
+    background-image: #426fa9;
+    background-image: -webkit-linear-gradient(top, #729fcf 0%, #3465a4 50%, #204a87 100%);
+    display: block;
+    height: 35px;
+    font: 28px "Funkydori";
+}
+
+nav {
+    text-align: center; 
+}
+
+p {
+    margin: 50px;
+    font-size: 16px;
+}
+
+fieldset {
+    border-color: #729fcf ;
+    border-width: 2px;
+}
+
+legend {
+   color: #3465a4;
+   text-shadow: 0 1px 0px #204a87;
+   margin: 0px;
+   padding: 20px 0px;
+   font: 24px "Funkydori";
+}
+
+input {
+    display: block;
+    height: 20px;
+    -webkit-border-radius: 8px;
+    margin: 5px;
+    text-shadow: 0 0 1px #8e8e7a;
+    background-color: #d8d8d8;    
+}
+
+input:focus {
+    outline-color: #729fcf;
+}
+    
+input[type='checkbox'] {
+    display: inline;
+    -webkit-border-radius: 5px;  
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    padding-left:2px; padding-right:2px;
+    -webkit-border-radius: 10px;
+    background-image: -webkit-linear-gradient(top, #729fcf 0%, #3465a4 50%, #204a87 100%);
+}
+
+li {
+    list-style: none;
+    font-family: "Funkydori";
+    font-size: 18px;
+}
+
+#property {
+    padding: 20px;
+}
+
+#priceRange {
+    padding: 20px;
+}
+
+#numBed {
+    padding: 20px;
+}
+
+#textArea {
+    padding: 20px;
+}
+
+label {
+    font-family: "Funkydori";
+    font-size: 18px;
+}
+
+textarea {
+    display: block;
+    height: 20px;
+    -webkit-border-radius: 8px;
+    margin: 5px;
+    text-shadow: 0 0 1px #8e8e7a;
+    background-color: #d8d8d8;
+    height: 50px;
+    width: 150px;
+    font-size: 14px;
+}
+
+#submit {
+    color: #d8d8d8;
+    text-shadow: 0 2px 0 #323232;
+    text-align: center;
+    background-image: #426fa9;
+    background-image: -webkit-linear-gradient(top, #729fcf 0%, #3465a4 50%, #204a87 100%);
+    -webkit-border-radius: 5px;
+    float: none;
+    font: 22px "Funkydori";
+    margin-bottom: 10px;
+    margin-right: 5px;
+    width: 200px;
+    height: 45px;
+    position: relative;
+    left: 50px;
+}
+
+#clear {
+    font-family: "Funkydori";
+    text-decoration: none;
+    float: left;
+}
+
+#displayLink {
+    float: none;
+    font-family: "Funkydori";
+    text-decoration: none;
+}
+
+#addNew {
+    float: none;
+    font-family: "Funkydori";
+    text-decoration: none;    
+}
+
+#newLead {
+    color: #d8d8d8;
+    text-shadow: 0 2px 0 #323232;
+    margin: 5px;    
+    text-align: center;
+    background-image: -webkit-linear-gradient(top, #729fcf 0%, #3465a4 50%, #204a87 100%);
+    -webkit-border-radius: 5px;
+    text-decoration: none;
+    font: 22px "Funkydori";
+    padding: 5px;
+    position: absolute;
+    width: 150px;
+    left: 70px;
+}
+
+#price {
+    width: 150px;
+}
+
+#leads ul {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#leads li {
+    padding: 3px;
+}
+
+#leads ul li ul {
+    padding: 5px;
+    border: 3px solid #729fcf;
+    box-shadow: 0px 3px 5px #444;;
+}
+
+#editLead {
+    color: #d8d8d8;
+    text-shadow: 0 2px 0 #323232;
+    margin: 5px;    
+    text-align: center;
+    background-image: -webkit-linear-gradient(top, #729fcf 0%, #3465a4 50%, #204a87 100%);
+    -webkit-border-radius: 5px;
+    text-decoration: none;
+    font: 14px "Funkydori";
+    padding: 5px;
+    position: relative;
+    display: inline;
+    top: 5px;
+}
+
+#deleteLead {
+    color: #d8d8d8;
+    text-shadow: 0 2px 0 #323232;
+    margin: 5px;    
+    text-align: center;
+    background-image: -webkit-linear-gradient(top, #729fcf 0%, #3465a4 50%, #204a87 100%);
+    -webkit-border-radius: 5px;
+    text-decoration: none;
+    font: 14px "Funkydori";
+    padding: 5px;
+    float: right;
+    position: relative;
+    display: inline;
+    bottom: 24px;
+}
+
+#errors {
+    color: red;
+}
+
