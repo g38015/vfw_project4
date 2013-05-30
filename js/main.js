@@ -1,4 +1,4 @@
-// Project 2
+// Project 4
 // Visual Frameworks 1305
 // Peter Hitchcock
 
@@ -132,6 +132,43 @@ window.addEventListener("DOMContentLoaded", function() {
              } 
      }
      
+     // Search Function
+     var searchButton = $('searchButton');
+     
+     function getSearch() {
+         var term = $('search').value;
+        
+         // Only searching by term
+         if (term != "") {
+              var makeList = document.createElement("ul");
+              document.getElementById("results").appendChild(makeList);
+              for (var i = 0, len=localStorage.length; i<len; i++) {
+                 var key = localStorage.key(i);
+                 var value = localStorage.getItem(key);
+                 var obj = JSON.parse(value);
+                 for (n in obj) {
+                     if (term === obj[n][1]) {
+                         var listItem = document.createElement("li");
+                         var subList = document.createElement("ul");
+                         listItem.appendChild(subList);
+                         makeList.appendChild(listItem);
+                         for(m in obj) {
+                             var finalLi = document.createElement("li");
+                             subList.appendChild(finalLi);
+                             finalLi.innerHTML = obj[m][0] + " " + obj[m][1];
+                         
+                         }
+                     }
+                     
+                 }
+             
+             }
+             
+         }
+     
+     }
+     searchButton.addEventListener("click", getSearch);
+               
      // Grab the image
      function getImage(catName, newSublist) {
          var imageLi = document.createElement("li");

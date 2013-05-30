@@ -1,6 +1,6 @@
 /*
 VFW 1305
-Project 2
+Project 4
 Peter Hitchcok
 May 14, 2013
 */
@@ -112,7 +112,7 @@ textarea {
     font-size: 14px;
 }
 
-#submit {
+#submit, #searchButton {
     color: #d8d8d8;
     text-shadow: 0 2px 0 #323232;
     text-align: center;
