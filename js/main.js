@@ -117,47 +117,48 @@ window.addEventListener("DOMContentLoaded", function() {
                      var value = localStorage.getItem(key);
                      // Convert sting from local storage back to an object by using JSON.parse()
                      var obj = JSON.parse(value);
-                     var newSublist = document.createElement("ul");
-                     newLi.appendChild(newSublist);
-                     getImage(obj.bedrooms[1], newSublist);
+                     var newsubLi = document.createElement("ul");
+                     newLi.appendChild(newsubLi);
+                     loadImage(obj.bedrooms[1], newsubLi);
                      for (var n in obj) {
                          var makeNewSubli =document.createElement("li");
-                         newSublist.appendChild(makeNewSubli);
+                         newsubLi.appendChild(makeNewSubli);
                          var optSubText = obj[n][0]+" "+obj[n][1];
                          makeNewSubli.innerHTML = optSubText;
-                         newSublist.appendChild(linkLi);                         
+                         newsubLi.appendChild(linkLi);                         
                      }
                      createLeadLinks(localStorage.key(i), linkLi);
-                 }
-             } 
+                 } 
+             }   
      }
      
      // Search Function
      var searchButton = $('searchButton');
      
-     function getSearch() {
-         var term = $('search').value;
+     function leadSearch() {
+         var query = $('search').value;
         
-         // Only searching by term
-         if (term != "") {
-              var makeList = document.createElement("ul");
-              document.getElementById("results").appendChild(makeList);
+         // Only searching by query
+         if (query != "") {
+              var makeUl = document.createElement("ul");
+              document.getElementById("results").appendChild(makeUl);
               for (var i = 0, len=localStorage.length; i<len; i++) {
                  var key = localStorage.key(i);
                  var value = localStorage.getItem(key);
                  var obj = JSON.parse(value);
                  for (n in obj) {
-                     if (term === obj[n][1]) {
-                         var listItem = document.createElement("li");
-                         var subList = document.createElement("ul");
-                         listItem.appendChild(subList);
-                         makeList.appendChild(listItem);
+                     if (query === obj[n][1]) {
+                         var makeLi = document.createElement("li");
+                         var subLi = document.createElement("ul");
+                         makeLi.appendChild(subLi);
+                         makeUl.appendChild(makeLi);
                          for(m in obj) {
-                             var finalLi = document.createElement("li");
-                             subList.appendChild(finalLi);
-                             finalLi.innerHTML = obj[m][0] + " " + obj[m][1];
+                             var lastLi = document.createElement("li");
+                             subLi.appendChild(lastLi);
+                             lastLi.innerHTML = obj[m][0] + " " + obj[m][1];
                          
                          }
+                         
                      }
                      
                  }
@@ -167,15 +168,15 @@ window.addEventListener("DOMContentLoaded", function() {
          }
      
      }
-     searchButton.addEventListener("click", getSearch);
+     searchButton.addEventListener("click", leadSearch);
                
      // Grab the image
-     function getImage(catName, newSublist) {
-         var imageLi = document.createElement("li");
-         newSublist.appendChild(imageLi);
-         var newImage = document.createElement('img');
-         var setSrc = newImage.setAttribute("src", "images/" + catName + ".png");
-         imageLi.appendChild(newImage);
+     function loadImage(bedNumber, newsubLi) {
+         var imageItem = document.createElement("li");
+         newsubLi.appendChild(imageItem);
+         var grabPng = document.createElement('img');
+         var setSrc = grabPng.setAttribute("src", "images/" + bedNumber + ".png");
+         imageItem.appendChild(grabPng);
      
      }
      
